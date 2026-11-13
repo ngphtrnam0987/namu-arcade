@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ll-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090514"/>
+      <stop offset="60%" stop-color="#140A28"/>
+      <stop offset="100%" stop-color="#0A1128"/>
+    </linearGradient>
+    <filter id="ll-laser-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#ll-bg)"/>
+
+  <!-- Matrix Grid -->
+  <g stroke="rgba(168, 85, 247, 0.15)" stroke-width="1">
+    <circle cx="100" cy="100" r="2" fill="#A855F7"/>
+    <circle cx="200" cy="100" r="2" fill="#A855F7"/>
+    <circle cx="300" cy="100" r="2" fill="#A855F7"/>
+    <circle cx="400" cy="100" r="2" fill="#A855F7"/>
+    <circle cx="500" cy="100" r="2" fill="#A855F7"/>
+
+    <circle cx="100" cy="200" r="2" fill="#A855F7"/>
+    <circle cx="200" cy="200" r="2" fill="#A855F7"/>
+    <circle cx="300" cy="200" r="2" fill="#A855F7"/>
+    <circle cx="400" cy="200" r="2" fill="#A855F7"/>
+    <circle cx="500" cy="200" r="2" fill="#A855F7"/>
+
+    <circle cx="100" cy="300" r="2" fill="#A855F7"/>
+    <circle cx="200" cy="300" r="2" fill="#A855F7"/>
+    <circle cx="300" cy="300" r="2" fill="#A855F7"/>
+    <circle cx="400" cy="300" r="2" fill="#A855F7"/>
+    <circle cx="500" cy="300" r="2" fill="#A855F7"/>
+  </g>
+
+  <!-- Laser Emitter at (100, 100) -->
+  <g transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="22" fill="#1E1B4B" stroke="#00F0FF" stroke-width="3"/>
+    <polygon points="12,0 -6,-10 -6,10" fill="#00F0FF"/>
+  </g>
+
+  <!-- Laser Beams Path -->
+  <!-- 1. Right to (350, 100) -->
+  <line x1="122" y1="100" x2="350" y2="100" stroke="#00F0FF" stroke-width="4" filter="url(#ll-laser-glow)"/>
+  <!-- 2. Down to (350, 260) -->
+  <line x1="350" y1="100" x2="350" y2="260" stroke="#A855F7" stroke-width="4" filter="url(#ll-laser-glow)"/>
+  <!-- 3. Left to (200, 260) -->
+  <line x1="350" y1="260" x2="200" y2="260" stroke="#EC4899" stroke-width="4" filter="url(#ll-laser-glow)"/>
+  <!-- 4. Down to Target (200, 320) -->
+  <line x1="200" y1="260" x2="200" y2="310" stroke="#EC4899" stroke-width="4" filter="url(#ll-laser-glow)"/>
+
+  <!-- Mirror 1 at (350, 100) -->
+  <g transform="translate(350, 100)">
+    <circle cx="0" cy="0" r="24" fill="#0F172A" stroke="#A855F7" stroke-width="2"/>
+    <line x1="-15" y1="-15" x2="15" y2="15" stroke="#00F0FF" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mirror 2 at (350, 260) -->
+  <g transform="translate(350, 260)">
+    <circle cx="0" cy="0" r="24" fill="#0F172A" stroke="#EC4899" stroke-width="2"/>
+    <line x1="-15" y1="15" x2="15" y2="-15" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mirror 3 at (200, 260) -->
+  <g transform="translate(200, 260)">
+    <circle cx="0" cy="0" r="24" fill="#0F172A" stroke="#38BDF8" stroke-width="2"/>
+    <line x1="-15" y1="-15" x2="15" y2="15" stroke="#00F0FF" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Target Sensor at (200, 320) - Glowing Active -->
+  <g transform="translate(200, 320)" filter="url(#ll-laser-glow)">
+    <circle cx="0" cy="0" r="24" fill="#EC4899" fill-opacity="0.3" stroke="#EC4899" stroke-width="3"/>
+    <circle cx="0" cy="0" r="14" fill="#FFFFFF"/>
+    <circle cx="0" cy="0" r="6" fill="#EC4899"/>
+  </g>
+
+  <!-- Wall Obstacle -->
+  <rect x="230" y="80" width="16" height="80" rx="4" fill="#334155" stroke="#64748B" stroke-width="2"/>
+
+  <!-- Title Watermark -->
+  <text x="30" y="380" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="3">
+    LASER LAB • OPTICS PUZZLE
+  </text>
+</svg>

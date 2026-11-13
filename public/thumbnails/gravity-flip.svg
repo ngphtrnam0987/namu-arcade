@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gf-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070A14"/>
+      <stop offset="50%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E1035"/>
+    </linearGradient>
+    <linearGradient id="gf-beam" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#A855F7" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="gf-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#gf-bg)"/>
+
+  <!-- Grid lines -->
+  <g stroke="rgba(0, 240, 255, 0.12)" stroke-width="1">
+    <line x1="0" y1="50" x2="600" y2="50"/>
+    <line x1="0" y1="350" x2="600" y2="350"/>
+    <line x1="50" y1="50" x2="50" y2="350"/>
+    <line x1="150" y1="50" x2="150" y2="350"/>
+    <line x1="250" y1="50" x2="250" y2="350"/>
+    <line x1="350" y1="50" x2="350" y2="350"/>
+    <line x1="450" y1="50" x2="450" y2="350"/>
+    <line x1="550" y1="50" x2="550" y2="350"/>
+  </g>
+
+  <!-- Ceiling and Floor Rails -->
+  <rect x="0" y="44" width="600" height="12" fill="#00F0FF" filter="url(#gf-glow)" opacity="0.8"/>
+  <rect x="0" y="344" width="600" height="12" fill="#00F0FF" filter="url(#gf-glow)" opacity="0.8"/>
+
+  <!-- Obstacle Spikes / Blocks -->
+  <polygon points="220,344 240,280 260,344" fill="#EC4899" filter="url(#gf-glow)"/>
+  <polygon points="360,56 380,120 400,56" fill="#EC4899" filter="url(#gf-glow)"/>
+  <polygon points="460,344 480,270 500,344" fill="#EC4899" filter="url(#gf-glow)"/>
+
+  <!-- Energy trail -->
+  <path d="M 60,320 Q 110,320 140,240 T 210,80" fill="none" stroke="url(#gf-beam)" stroke-width="4" stroke-dasharray="8 4" opacity="0.7"/>
+
+  <!-- Hero Player Cube in Mid-Flip -->
+  <g transform="translate(195, 95) rotate(45)" filter="url(#gf-glow)">
+    <rect x="-24" y="-24" width="48" height="48" rx="8" fill="#00F0FF" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="0" cy="0" r="10" fill="#FFFFFF"/>
+  </g>
+
+  <!-- Floating Gravity Arrow Badge -->
+  <g transform="translate(510, 80)">
+    <circle cx="0" cy="0" r="28" fill="rgba(15, 23, 42, 0.8)" stroke="#A855F7" stroke-width="2"/>
+    <path d="M 0,-14 L 10,-2 L -10,-2 Z" fill="#00F0FF"/>
+    <path d="M 0,14 L 10,2 L -10,2 Z" fill="#EC4899"/>
+  </g>
+
+  <!-- Title Watermark -->
+  <text x="30" y="380" fill="#94A3B8" font-family="system-ui, sans-serif" font-size="16" font-weight="700" letter-spacing="3">
+    GRAVITY FLIP • ARCADE RUNNER
+  </text>
+</svg>
