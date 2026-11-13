@@ -112,8 +112,8 @@ Production artifacts are generated in the `dist/` directory.
 
 ## 🌐 Deployment & Live Demo
 
-- **Repository:** Public repository on GitHub.
-- **Cloudflare Production URL:** Deployed to Cloudflare Workers edge network.
+- **GitHub Repository:** [https://github.com/ngphtrnam0987/namu-arcade](https://github.com/ngphtrnam0987/namu-arcade)
+- **Cloudflare Production URL:** [https://namu-arcade.regal-aspen-b40.workers.dev](https://namu-arcade.regal-aspen-b40.workers.dev)
 - **Offline & PWA Ready:** Zero external asset dependencies ensures smooth offline play.
 
 ---

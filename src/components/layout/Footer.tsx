@@ -87,7 +87,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/ngphtrnam0987/namu-arcade"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white transition"
